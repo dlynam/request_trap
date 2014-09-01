@@ -1,0 +1,13 @@
+<h2><%= trap_id %></h2>
+<% @requests.each do |request| %>
+  <div class='request'>
+    <p>Request date: <%= request.created_at.strftime('%B %d, %Y') %></p>
+    <p>Remote ip: <%= request.remote_ip %></p>
+    <p>Request-method: <%= request.method %></p>
+    <p>Scheme: <%= request.scheme %></p>
+    <p>Query-string: <%= request.query_string %></p>
+    <p>Query-params: <%= request.query_params %></p>
+    <p>Cookies <%= request.cookies %></p>
+  </div>
+  <br/>
+<% end %>

@@ -1,12 +1,12 @@
 class RequestsController < ApplicationController
+  helper_method :trap_id
 
   def create
     CreateRequest.new(trap_id, request, response).create
   end
 
   def index
-    raise trap_id.inspect
-    raise params.inspect
+    @requests = Request.where trap_id: trap_id
   end
 
   def show
