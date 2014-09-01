@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
   end
 
   def show
-    @request = requests.find params[:id]
+    @request_obj = requests.find params[:id]
   end
 
   private

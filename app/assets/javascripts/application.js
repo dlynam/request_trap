@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('a.show-response').click(function(){
+    $(this).next('.raw-response').toggle();
+    return false;
+  })
+})
