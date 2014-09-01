@@ -7,7 +7,11 @@
     <p>Scheme: <%= request.scheme %></p>
     <p>Query-string: <%= request.query_string %></p>
     <p>Query-params: <%= request.query_params %></p>
-    <p>Cookies <%= request.cookies %></p>
+    <p>Cookies: <%= request.cookies %></p>
+    <p class='headers'>
+      Headers:<br/>
+      <%= format_headers(request.headers) %>
+    </p>
   </div>
   <br/>
 <% end %>
