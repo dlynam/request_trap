@@ -8,6 +8,7 @@ class CreateRequest
 
   def create
     SetRequestInfo.new(request_obj, request).set_info
+    raise request_obj.inspect
   end
 
   private
