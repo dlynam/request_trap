@@ -1,10 +1,9 @@
 class CreateRequest
 
-  def initialize(params, request, response)
-    @params = params
+  def initialize(trap_id, request, response)
     @request = request
     @response = response
-    @request_obj = new_request_obj
+    @request_obj = new_request_obj(trap_id)
   end
 
   def create
@@ -15,9 +14,9 @@ class CreateRequest
 
   private
 
-  attr_reader :request, :params, :response, :request_obj
+  attr_reader :request, :response, :request_obj
 
-  def new_request_obj
-    Request.new trap_id: params[:trap_id]
+  def new_request_obj(trap_id)
+    Request.new trap_id: trap_id
   end
 end
