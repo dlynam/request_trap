@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
 
   def create
-    CreateRequest.new(params, request).create
+    CreateRequest.new(params, request, response).create
   end
 
   def index
