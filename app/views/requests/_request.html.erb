@@ -1,0 +1,15 @@
+<div class='request'>
+  <p>Request date: <%= request_obj.created_at.strftime('%B %d, %Y') %></p>
+  <p>Remote ip: <%= request_obj.remote_ip %></p>
+  <p>Request-method: <%= request_obj.method %></p>
+  <p>Scheme: <%= request_obj.scheme %></p>
+  <p>Query-string: <%= request_obj.query_string %></p>
+  <p>Query-params: <%= request_obj.query_params %></p>
+  <p>Cookies: <%= request_obj.cookies %></p>
+  <p class='headers'>
+    Headers:<br/>
+    <%= format_headers(request_obj.headers) %>
+  </p>
+</div>
+<hr>
+<br/>
