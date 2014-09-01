@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trap_id: MyString
+  remote_ip: MyString
+  method: MyString
+  scheme: MyString
+  query_string: MyText
+  query_params: MyText
+  cookies: MyText
+  headers: MyText
+  raw_response: MyText
+
+two:
+  trap_id: MyString
+  remote_ip: MyString
+  method: MyString
+  scheme: MyString
+  query_string: MyText
+  query_params: MyText
+  cookies: MyText
+  headers: MyText
+  raw_response: MyText
