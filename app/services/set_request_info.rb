@@ -12,6 +12,7 @@ class SetRequestInfo
     set_query_string
     set_query_parameters
     set_cookies
+    set_headers
   end
 
   def set_remote_ip
@@ -36,6 +37,10 @@ class SetRequestInfo
 
   def set_cookies
     request_obj.cookies = request.cookies
+  end
+
+  def set_headers
+    request_obj.headers = ExtractedHeaders.new(request.headers).extract
   end
 
   private
