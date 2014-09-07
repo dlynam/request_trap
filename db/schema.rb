@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140901204442) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "requests", force: true do |t|
     t.string   "trap_id"
     t.string   "remote_ip"

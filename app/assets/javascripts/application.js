@@ -16,8 +16,15 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('a.show-response').click(function(){
+  $('a.show-response').each(function(){
+    rawRespToggle($(this));
+  })
+})
+
+function rawRespToggle(showResponseEl){
+  showResponseEl.click(function(){
     $(this).next('.raw-response').toggle();
     return false;
   })
-})
+
+}

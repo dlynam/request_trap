@@ -1,4 +1,4 @@
-<div class='request'>
+<div class='request' id="request_<%= request_obj.id %>">
   <p>Request date: <%= request_obj.created_at.strftime('%B %d, %Y') %></p>
   <p>Remote ip: <%= request_obj.remote_ip %></p>
   <p>Request-method: <%= request_obj.method %></p>
