@@ -26,5 +26,4 @@ function rawRespToggle(showResponseEl){
     $(this).next('.raw-response').toggle();
     return false;
   })
-
 }
