@@ -1,10 +1,10 @@
 class MonitorRequestsController < ApplicationController
   include ActionController::Live
 
-  def index
+  def show
     response.headers['Content-Type'] = 'text/event-stream'
     begin
-      Request.monitor_new_requests do |request_id|
+      Request.monitor_new_requests(trap_id) do |request_id|
        response.stream.write "event: update\n"
        response.stream.write "data: #{request_html(request_id)}\n\n"
       end
@@ -14,6 +14,10 @@ class MonitorRequestsController < ApplicationController
   end
 
   private
+
+  def trap_id
+    params[:id]
+  end
 
   def request_html(request_id)
     request_obj = Request.find(request_id)

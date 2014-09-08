@@ -6,7 +6,9 @@
 </div>
 <script type="text/javascript">
   jQuery(document).ready(function() {
-    var source = new EventSource('/monitor_requests');
+    var trapId = '<%= trap_id %>';
+    var eventSourcePath = '/monitor_requests/' + trapId;
+    var source = new EventSource(eventSourcePath);
     source.addEventListener('update',function(e){
       $('#requests').prepend(e.data);
       var showRespEl = $('.request').first().find('a.show-response').first();
