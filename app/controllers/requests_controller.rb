@@ -3,6 +3,7 @@ class RequestsController < ApplicationController
 
   def create
     CreateRequest.new(trap_id, request, response).create
+    head 200, :content_type => 'text/html'
   end
 
   def index
